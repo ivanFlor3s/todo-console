@@ -31,11 +31,18 @@ class Tareas {
         this._listado[TAREA.id] = TAREA;
     }
 
-    listarCompleto(){
+    listarCompleto(tareas = this.listadoArr){
         console.log('\n')
-        this.listadoArr.forEach((element, index) => {
+        tareas.forEach((element, index) => {
             console.log( `${index + 1 }`.green + `. ${element.desc} :: ${ element.completadoEn == null ? 'Pendiente'.red : 'Completada'.yellow } `)
         });
+    }
+
+    listarCompletadas( complatedas=  true){
+        const FILTRADAS = this.listadoArr.filter( x =>
+             complatedas ? x.completadoEn != null : x.completadoEn == null
+        )
+        this.listarCompleto(FILTRADAS)
     }
 }
 

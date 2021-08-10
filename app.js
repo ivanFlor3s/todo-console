@@ -34,11 +34,11 @@ const main = async() => {
                 break;
 
             case '3':
-                
+                TAREAS.listarCompletadas(true)
                 break;
 
             case '4':
-                
+                TAREAS.listarCompletadas(false)
                 break;
             case '5':
                 
