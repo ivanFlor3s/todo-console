@@ -17,7 +17,13 @@ class Tareas {
         this._listado = {}
     }
 
-    
+    cargarTareas(tareas = []){
+        tareas.forEach( tarea => {
+            this._listado[tarea.id] = tarea
+        })
+        
+        
+    }
 
     crearTarea(desc = ''){
         const TAREA = new Tarea(desc);

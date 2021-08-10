@@ -15,9 +15,9 @@ const main = async() => {
     const TAREASDB = leerDB()
 
     if(TAREASDB){
-        //Establecer tareas
+        TAREAS.cargarTareas(TAREASDB)
     }
-    await pausa()
+    
     let opt = ''
     do {
 
