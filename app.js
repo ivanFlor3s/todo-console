@@ -30,7 +30,7 @@ const main = async() => {
                 break;
 
             case '2':
-                console.log(TAREAS.listadoArr)
+                TAREAS.listarCompleto()
                 break;
 
             case '3':
@@ -48,11 +48,11 @@ const main = async() => {
                 break;
         }
 
-        //guardarDB( TAREAS.listadoArr)
+        guardarDB( TAREAS.listadoArr)
 
         await pausa()
         
-        console.log({opt})
+        
        
 
     } while (opt !== '0');

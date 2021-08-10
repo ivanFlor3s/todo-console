@@ -1,4 +1,5 @@
 const Tarea = require("./tarea")
+require("colors");
 
 class Tareas {
     _listado = {}
@@ -28,6 +29,13 @@ class Tareas {
     crearTarea(desc = ''){
         const TAREA = new Tarea(desc);
         this._listado[TAREA.id] = TAREA;
+    }
+
+    listarCompleto(){
+        console.log('\n')
+        this.listadoArr.forEach((element, index) => {
+            console.log( `${index + 1 }`.green + `. ${element.desc} :: ${ element.completadoEn == null ? 'Pendiente'.red : 'Completada'.yellow } `)
+        });
     }
 }
 
