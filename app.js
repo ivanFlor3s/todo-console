@@ -42,7 +42,7 @@ const main = async() => {
                 break;
             case '5':
                 const ids = await mostrarListadoChecklist(TAREAS.listadoArr)
-                console.log(ids)
+                TAREAS.toggleCompletadas(ids)
                 break;
             case '6':
                 const id = await listadoTareasBorrar(TAREAS.listadoArr)
