@@ -45,10 +45,13 @@ const main = async() => {
                 break;
             case '6':
                 const id = await listadoTareasBorrar(TAREAS.listadoArr)
-                const ok = await confirmar('Esta seguro?')
-                if (ok){
-                    TAREAS.borrarTarea(id)
-                    console.log('TAREA BORRADA')
+                if(id !== '0'){
+                    const ok = await confirmar('Esta seguro?')
+                    if (ok){
+                        TAREAS.borrarTarea(id)
+                        console.log('TAREA BORRADA')
+                    }
+
                 }
 
                 

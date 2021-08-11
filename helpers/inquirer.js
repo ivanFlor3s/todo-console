@@ -90,6 +90,12 @@ const listadoTareasBorrar = async(tareas=[]) =>{
       value: element.id,
       name: `${idx}. ${element.desc}`
     }
+    
+  })
+
+  choices.unshift({
+    value: '0',
+    name: '0'.green + '. Cancelar'
   })
 
   const pregunta = [ {
