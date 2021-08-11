@@ -1,6 +1,6 @@
 
 const { guardarDB, leerDB } = require('./helpers/guardarArchivo');
-const {inquiererMenu, pausa, leerInput} = require('./helpers/inquirer')
+const {inquiererMenu, pausa, leerInput, listadoTareasBorrar} = require('./helpers/inquirer')
 const Tareas = require('./models/tareas')
 
 require('colors');
@@ -43,6 +43,10 @@ const main = async() => {
             case '5':
                 
                 break;
+            case '6':
+                const id = await listadoTareasBorrar(TAREAS.listadoArr)
+                console.log(id)
+                break
         
             default:
                 break;
