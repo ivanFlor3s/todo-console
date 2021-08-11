@@ -1,6 +1,6 @@
 
 const { guardarDB, leerDB } = require('./helpers/guardarArchivo');
-const {inquiererMenu, pausa, leerInput, listadoTareasBorrar, confirmar} = require('./helpers/inquirer')
+const {inquiererMenu, pausa, leerInput, listadoTareasBorrar, confirmar, mostrarListadoChecklist} = require('./helpers/inquirer')
 const Tareas = require('./models/tareas')
 
 require('colors');
@@ -41,7 +41,8 @@ const main = async() => {
                 TAREAS.listarCompletadas(false)
                 break;
             case '5':
-                
+                const ids = await mostrarListadoChecklist(TAREAS.listadoArr)
+                console.log(ids)
                 break;
             case '6':
                 const id = await listadoTareasBorrar(TAREAS.listadoArr)
